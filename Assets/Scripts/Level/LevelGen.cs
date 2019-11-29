@@ -5,28 +5,33 @@ using UnityEngine;
 public class LevelGen : MonoBehaviour
 {
     [SerializeField]private GameObject floor;
-    private GameObject[] floors;
-    public int gridSizeX, gridSizeZ;
+    private GameObject[,] floors;
+    [SerializeField]private int gridSizeX, gridSizeZ;
+
+    public GameObject[,] Floors { get => floors;}
 
     void Start()
     {
-        for (int i = 0; i < gridSizeX; i++)
+        floors = new GameObject[gridSizeX,gridSizeZ];
+        for (int x = 0; x < gridSizeX; x++)
         {
-            Instantiate(floor, new Vector3(i * 5,0,0), Quaternion.identity);
-
-            for (int j = 0; j < gridSizeZ; j++)
+            for (int z = 0; z < gridSizeZ; z++)
             {
-                Instantiate(floor, new Vector3(j * 5, 0, i * -5), Quaternion.identity);
-                if (j == gridSizeX)
-                {
-                    j = 0;
-                }
+                floors[x, z] = Instantiate(floor, new Vector3(x * 5, 0, z * -5), Quaternion.identity);
+                floors[x, z].gameObject.transform.parent = gameObject.transform;
             }
         }
-    }//INFINIT LOOP WARNING!
-
-    void Update()
-    {
-        
+        GetComponent<DangerZones>().enabled = true;
     }
+
+    public int GetSizeX()
+    {
+        return gridSizeX;
+    }
+
+    public int GetSizeZ()
+    {
+        return gridSizeZ;
+    }
+
 }
