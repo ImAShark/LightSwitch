@@ -7,14 +7,15 @@ public class DangerZones : MonoBehaviour
     [SerializeField] Material save, warning, danger;
     [SerializeField]private float dDuration,wDuration,tTimer,speedMultiplier = 0.0001f;
     private float timer,speed = 1;
-    private int xSize, zSize;
-
+    private int xSize, zSize, x, z;
+    private Collider barrier;
 
     void Start()
     {
         timer = tTimer;
         xSize = GetComponent<LevelGen>().GetSizeX();
         zSize = GetComponent<LevelGen>().GetSizeZ();
+        CreateLocation();
     }
 
     void Update()
@@ -29,11 +30,14 @@ public class DangerZones : MonoBehaviour
         {
             ChangeStage(save);
             timer = tTimer;
-            speed += speedMultiplier;
+            //speed += speedMultiplier;
+            GetComponent<LevelGen>().Floors[x, z].gameObject.GetComponent<Collider>().enabled = false;
+            CreateLocation();
         }
         else if (timer < dDuration)//danger
         {
             ChangeStage(danger);
+            GetComponent<LevelGen>().Floors[x, z].gameObject.GetComponent<Collider>().enabled = true;
             CountDown();
         }
         else if (timer < wDuration)//warning
@@ -54,13 +58,13 @@ public class DangerZones : MonoBehaviour
 
     private void CreateLocation()
     {
-        int x = Random.Range(0,xSize);
-        int z = Random.Range(0,zSize);
+        x = Random.Range(0,xSize);
+        z = Random.Range(0,zSize);
     }
 
     private void ChangeStage(Material m)
-    {
-        GetComponent<LevelGen>().Floors[0, 0].gameObject.GetComponent<MeshRenderer>().material = m;
+    {        
+        GetComponent<LevelGen>().Floors[x, z].gameObject.GetComponent<MeshRenderer>().material = m;        
     }
 
 }

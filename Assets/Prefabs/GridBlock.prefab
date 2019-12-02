@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5206724363010844225}
   - component: {fileID: 5996585338237838363}
   - component: {fileID: 6800689682400494239}
-  - component: {fileID: 1818233266562256133}
   - component: {fileID: 2188738395645508783}
+  - component: {fileID: 4379007870072678851}
   m_Layer: 0
   m_Name: GridBlock
   m_TagString: DeathBarrier
@@ -80,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1818233266562256133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946694736333446826}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &2188738395645508783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102,7 +89,20 @@ BoxCollider:
   m_GameObject: {fileID: 946694736333446826}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1, y: 3.5, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &4379007870072678851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946694736333446826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3530f19be6c464342aa19d96e56c5938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danger: {fileID: 2100000, guid: 2e490138c330e9a47996900e5d409f31, type: 2}
