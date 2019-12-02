@@ -5,15 +5,15 @@ using System;
 
 public class Die : MonoBehaviour
 {
-    [SerializeField] private GameObject parent;
+    [SerializeField] private GameObject mainParent;
     public Action PlayerDied;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "DeathBarrier")
+        if (other.tag == "DeathBarrier")
         {
             PlayerDied();
-            Destroy(parent);
+            Destroy(mainParent);
         }
     }
 }

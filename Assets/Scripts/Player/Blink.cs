@@ -19,7 +19,11 @@ public class Blink : MonoBehaviour
     {
         if (timer <= 0)
         {
-            charges++;
+            if (charges != maxCharges)
+            {
+                charges++;
+            }
+            
             timer = rechargeTime;
         }
         else

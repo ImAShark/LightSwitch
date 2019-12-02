@@ -19,6 +19,7 @@ public class LevelGen : MonoBehaviour
             {
                 floors[x, z] = Instantiate(floor, new Vector3(x * 5, 0, z * -5), Quaternion.identity);
                 floors[x, z].gameObject.transform.parent = gameObject.transform;
+                floors[x, z].gameObject.GetComponent<GameOver>().SetIndex(x,z);
             }
         }
         GetComponent<DangerZones>().enabled = true;
