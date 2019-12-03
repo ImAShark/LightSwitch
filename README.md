@@ -26,12 +26,14 @@ Trying to make all the tiles white from where the player died using floodfill.
 
 Changing the material from save to warning and danger.
 Once on danger the player will die when above the tile.
+
 ----------------------------------
 --Player
 
 -Die
 
 Makes the player dissapear when it gets above a danger tile or gets hit by the enemy.
+
 ----------------------------------
 -Movement
 
