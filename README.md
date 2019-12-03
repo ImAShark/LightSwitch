@@ -6,9 +6,9 @@ My code so far for this project
 Some quick voxel models I made.
 ----------------------------------
 
----Enemy
+-Enemy
 
-Making the enemy look an move towards the player.
+Making the enemy look and move towards the player.
 ---------------------------------
 --Level
 
