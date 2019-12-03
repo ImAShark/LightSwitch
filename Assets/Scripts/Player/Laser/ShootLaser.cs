@@ -4,19 +4,49 @@ using UnityEngine;
 
 public class ShootLaser : MonoBehaviour
 {
-    [SerializeField] private Transform start, end;
-    [SerializeField] private float laserWidth;
-    LineRenderer laserLine;
-
+    [SerializeField]private float maxEnergy = 100,energyCost,rechargeRate;
+    private float energy;
+    [SerializeField]private GameObject laser;
+    private bool isCharging = false;
+    
     void Start()
     {
-        laserLine = GetComponent<LineRenderer>();
-        laserLine.SetWidth(laserWidth,laserWidth);
+        energy = maxEnergy;
+        laser.SetActive(false);
     }
 
     void Update()
     {
-        laserLine.SetPosition(0,start.position);
-        laserLine.SetPosition(1,end.position);
+        FireLaser();
+    }
+
+    private void FireLaser()
+    {
+        if (Input.GetKey(KeyCode.Mouse0) && energy > 0 && !isCharging)
+        {
+            laser.SetActive(true);
+            energy = energy - energyCost * Time.deltaTime;
+        }
+        else
+        {
+            laser.SetActive(false);                     
+        }
+
+        if (energy >= maxEnergy)
+        {
+            energy = maxEnergy;
+        }
+        else
+        {
+            energy += rechargeRate * Time.deltaTime;
+        }
+        if (energy < 0 && laser.activeSelf)
+        {
+            isCharging = true;
+        }
+        else if (energy >= 5)
+        {
+            isCharging = false;
+        }
     }
 }

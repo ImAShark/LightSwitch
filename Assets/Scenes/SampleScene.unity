@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 547806305}
   - component: {fileID: 547806304}
   - component: {fileID: 547806306}
+  - component: {fileID: 547806307}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -210,6 +211,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rechargeTime: 3
   maxCharges: 1
+--- !u!114 &547806307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547806303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedc543e9c39c0340bbd185033740315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergy: 20
+  energyCost: 5
+  rechargeRate: 1
+  laser: {fileID: 1768958578}
 --- !u!1 &589915911
 GameObject:
   m_ObjectHideFlags: 0
