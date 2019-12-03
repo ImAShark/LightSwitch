@@ -27,7 +27,6 @@ public class DangerZones : MonoBehaviour
     void Update()
     {
         ActivateZone();
-        //Debug.Log(timer);
     }
 
     private void ActivateZone()

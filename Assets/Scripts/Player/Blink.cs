@@ -44,7 +44,7 @@ public class Blink : MonoBehaviour
                                                                 transform.position.y));
             transform.position = new Vector3(mouseWorld.x + 1.2f,
                                             transform.position.y,
-                                            mouseWorld.z + 1.1f) ;
+                                            mouseWorld.z + 1.2f) ;
             charges--;
         }
 
