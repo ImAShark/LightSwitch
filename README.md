@@ -12,7 +12,7 @@ Some quick voxel models I made.
 Making the enemy look and move towards the player.
 
 ---------------------------------
-##Level
+###Level
 
 -LevelGen
 
@@ -28,7 +28,7 @@ Changing the material from save to warning and danger.
 Once on danger the player will die when above the tile.
 
 ----------------------------------
-##Player
+###Player
 
 -Die
 
